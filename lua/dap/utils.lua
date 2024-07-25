@@ -286,7 +286,7 @@ function M.pick_file(opts)
   local prompt = executables and "Select executable: " or "Select file: "
   local co, ismain = coroutine.running()
   local ui = require("dap.ui")
-  local pick = (co and not ismain) and ui.pick_one or ui.pick_one_sync
+  local pick = (co and not ismain) and ui.pick_one or ui.pick_one
 
   if not vim.endswith(path, "/") then
     path = path .. "/"
